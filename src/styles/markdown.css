@@ -1,7 +1,25 @@
 .markdown-body {
   font-size: 18px;
-  color: rgba(0, 0, 0, .8);
+  color: var(--text-primary);
   background: transparent;
+}
+
+.markdown-body a {
+  color: var(--primary);
+}
+
+.markdown-body a {
+  border-bottom: 1px solid var(--primary);
+}
+
+.markdown-body a:hover {
+  opacity: .6;
+  text-decoration: unset;
+}
+
+.markdown-body code {
+  color: var(--text-on-secondary);
+  background-color: var(--secondary-container);
 }
 
 .markdown-body h1,

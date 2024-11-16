@@ -12,8 +12,6 @@ tags: []
 drafts: true
 ---
 
-# [NO TITLE]
-
 :)
 `)
 } catch(err) {

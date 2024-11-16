@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router/auto'
-import { computed } from 'vue'
+import { computed, reactive } from 'vue'
 import dayjs from 'dayjs'
-import type { Post } from '@/types'
 
 const router = useRouter()
 const routes = router.getRoutes().filter(route => {
@@ -11,24 +10,67 @@ const routes = router.getRoutes().filter(route => {
     && !route.meta.frontmatter.drafts
 })
 
-const posts = computed(() => routes.map(route => ({
-  path: route.path,
-  title: route.meta.frontmatter.title,
-  date: route.meta.frontmatter.date || 0,
-  tags: route.meta.frontmatter.tags,
-}) as Post))
+const tags = reactive({ value: new Map<string, boolean>() })
+
+const noSelectedTags = computed(() => {
+  return Array.from(tags.value.values()).every(selected => !selected)
+})
+
+const posts = computed(() => routes.map(route => {
+  return {
+    path: route.path,
+    title: (route.meta.frontmatter.title || 'UNTITLED') as string,
+    date: route.meta.frontmatter.date || 0,
+    tags: (route.meta.frontmatter.tags || []) as string[],
+  }
+}).sort(({ date: d0 }, { date: d1 }) => d1 - d0))
+
+function toggleTag(tag: string) {
+  if (tags.value.has(tag)) {
+    tags.value.set(tag, !tags.value.get(tag))
+  }
+}
+
+function initTags() {
+  const allTags = routes.reduce((acc, cur) => {
+    acc.push(...(cur.meta.frontmatter.tags || []))
+    return acc
+  }, [] as string[])
+  const deduplicatedTags = new Set(allTags)
+  deduplicatedTags.forEach(tag => tags.value.set(tag, false))
+}
+
+function isVisible(postTags: string[]) {
+  return postTags.some(tag => tags.value.get(tag))
+}
+
+initTags()
 </script>
 
 <template>
+  <div class=" mb-6 space-x-4 ">
+    <span
+      v-for="[tag, selected] in tags.value"
+      class=" inline text-base cursor-pointer select-none rounded "
+      :style="{
+        color: selected ? 'var(--text-on-secondary)' : '',
+        backgroundColor: selected ? 'var(--secondary-container)' : '',
+        padding: selected ? '0.1rem 0.4rem' : '',
+      }"
+      @click="() => toggleTag(tag)"
+    >
+      # {{ tag }}
+    </span>
+  </div>
   <ul class=" space-y-2 " :style="{ paddingLeft: 'unset' }">
-    <li v-for="post in posts">
+    <li v-for="post in posts" :style="{ display: noSelectedTags || isVisible(post.tags) ? 'block' : 'none' }">
       <RouterLink
         :style="{ color: 'inherit' }"
         :to="post.path"
       >
         {{ post.title }}
       </RouterLink>
-      <span class=" ms-2 text-base text-[--text-tertiary] ">
+      <span class=" ms-2 text-base text-[--text-secondary] select-none ">
         {{ dayjs(post.date).format('D MMM YYYY') }}
       </span>
     </li>

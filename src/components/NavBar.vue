@@ -37,12 +37,12 @@ function toggleMenu() { state.open = !state.open }
       <div class=" block sm:hidden cursor-pointer " @click="toggleMenu"><IconMenu /></div>
       <div class=" flex-1"></div>
       <div class=" flex flex-row space-x-8 items-center font-sans uppercase ">
-        <RouterLink class=" hidden sm:block " to="/">Home</RouterLink>
-        <RouterLink class=" hidden sm:block " to="/portfolio">Portfolio</RouterLink>
-        <RouterLink class=" hidden sm:block " to="/photos">Photos</RouterLink>
-        <RouterLink class=" hidden sm:block " to="/posts">Posts</RouterLink>
-        <a href="https://x.com/657KB" title="X / Twitter"><IconTwitter /></a>
-        <a href="https://github.com/657kb" title="Github"><IconGithub /></a>
+        <RouterLink class=" hidden sm:block hover:opacity-60 " to="/">Home</RouterLink>
+        <RouterLink class=" hidden sm:block hover:opacity-60 " to="/portfolio">Portfolio</RouterLink>
+        <RouterLink class=" hidden sm:block hover:opacity-60 " to="/photos">Photos</RouterLink>
+        <RouterLink class=" hidden sm:block hover:opacity-60 " to="/posts">Posts</RouterLink>
+        <a class=" hover:opacity-60 " href="https://x.com/657KB" title="X / Twitter"><IconTwitter /></a>
+        <a class=" hover:opacity-60 "href="https://github.com/657kb" title="Github"><IconGithub /></a>
       </div>
     </div>
   </nav>
