@@ -22,7 +22,18 @@
   background-color: var(--secondary-container);
 }
 
+.markdown-body pre {
+  background-color: #eaefe0;
+}
+
 .markdown-body h1,
 .markdown-body h2 {
   border-bottom: unset;
+}
+
+.markdown-body ul {
+  padding-left: 1.5em;
+}
+.markdown-body ul > li::marker {
+  content: '•  ';
 }

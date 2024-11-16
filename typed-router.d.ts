@@ -23,6 +23,7 @@ declare module 'vue-router/auto-routes' {
     '/photos': RouteRecordInfo<'/photos', '/photos', Record<never, never>, Record<never, never>>,
     '/portfolio': RouteRecordInfo<'/portfolio', '/portfolio', Record<never, never>, Record<never, never>>,
     '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
+    '/posts/how-to-use-quickjs-in-flutter': RouteRecordInfo<'/posts/how-to-use-quickjs-in-flutter', '/posts/how-to-use-quickjs-in-flutter', Record<never, never>, Record<never, never>>,
     '/posts/mungstern-coffee': RouteRecordInfo<'/posts/mungstern-coffee', '/posts/mungstern-coffee', Record<never, never>, Record<never, never>>,
   }
 }
