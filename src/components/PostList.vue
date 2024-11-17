@@ -53,9 +53,9 @@ initTags()
       v-for="[tag, selected] in tags.value"
       class=" inline text-base cursor-pointer select-none rounded "
       :style="{
-        color: selected ? 'var(--text-on-secondary)' : '',
-        backgroundColor: selected ? 'var(--secondary-container)' : '',
-        padding: selected ? '0.1rem 0.4rem' : '',
+        color: selected ? 'var(--text-on-secondary)' : undefined,
+        backgroundColor: selected ? 'var(--secondary-container)' : undefined,
+        padding: selected ? '0.1rem 0.4rem' : undefined,
       }"
       @click="() => toggleTag(tag)"
     >
