@@ -53,7 +53,7 @@ initTags()
       v-for="[tag, selected] in tags.value"
       class=" inline text-base cursor-pointer select-none rounded "
       :style="{
-        color: selected ? 'var(--text-on-secondary)' : undefined,
+        border: selected ? '1px dashed #242424' : undefined,
         backgroundColor: selected ? 'var(--secondary-container)' : undefined,
         padding: selected ? '0.1rem 0.4rem' : undefined,
       }"
@@ -70,7 +70,7 @@ initTags()
       >
         {{ post.title }}
       </RouterLink>
-      <span class=" ms-2 text-base text-[--text-secondary] select-none ">
+      <span class=" ms-2 text-base text-[#888] select-none ">
         {{ dayjs(post.date).format('D MMM YYYY') }}
       </span>
     </li>

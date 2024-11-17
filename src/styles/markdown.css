@@ -1,15 +1,14 @@
 .markdown-body {
   font-size: 18px;
-  color: var(--text-primary);
   background: transparent;
 }
 
 .markdown-body a {
-  color: var(--primary);
+  color: inherit;
 }
 
 .markdown-body a {
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid #242424;
 }
 
 .markdown-body a:hover {
@@ -17,13 +16,8 @@
   text-decoration: unset;
 }
 
-.markdown-body code {
-  color: var(--text-on-secondary);
-  background-color: var(--secondary-container);
-}
-
 .markdown-body pre {
-  background-color: #eaefe0;
+  background-color: #eeeeee;
 }
 
 .markdown-body h1,

@@ -1,16 +1,6 @@
 :root {
-  --bg: #f9faef;
-  --primary: #4c662b;
-  --secondary: #586249;
-  --tertiary: #386663;
-  --primary-container: #cdeda3;
-  --secondary-container: #dce7c8;
-  --tertiary-container: #bcece7;
-  --text-primary: #1a1c16;
-  --text-secondary: #44483d;
-  --text-on-primary: #102000;
-  --text-on-secondary: #151e0b;
-  --text-on-tertiary: #00201e;
+  --bg: #fefefe;
+  --text-primary: #242424;
 }
 
 html {
