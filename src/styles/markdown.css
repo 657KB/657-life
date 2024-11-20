@@ -1,5 +1,6 @@
 .markdown-body {
   font-size: 18px;
+  color: var(--text-primary);
   background: transparent;
 }
 
@@ -8,16 +9,12 @@
 }
 
 .markdown-body a {
-  border-bottom: 1px solid #242424;
+  border-bottom: 1px solid var(--md-a-border-bottom);
 }
 
 .markdown-body a:hover {
   opacity: .6;
   text-decoration: unset;
-}
-
-.markdown-body pre {
-  background-color: #eeeeee;
 }
 
 .markdown-body h1,

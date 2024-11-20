@@ -1,5 +1,5 @@
 <template>
-  <div class="icon-twitter w-6 h-6"></div>
+  <div class="icon icon-twitter w-6 h-6"></div>
 </template>
 <style lang="css" scoped>
 .icon-twitter {

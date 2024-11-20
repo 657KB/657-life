@@ -1,5 +1,5 @@
 <template>
-  <div class="icon-github w-6 h-6"></div>
+  <div class="icon icon-github w-6 h-6"></div>
 </template>
 <style lang="css" scoped>
 .icon-github {
