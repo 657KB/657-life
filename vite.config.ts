@@ -8,6 +8,7 @@ import markdown from 'unplugin-vue-markdown/vite'
 import markdownAnchor from 'markdown-it-anchor'
 import markdownPrism from 'markdown-it-prism'
 import matter from 'gray-matter'
+import prism from 'vite-plugin-prismjs'
 
 export default defineConfig({
   resolve: {
@@ -32,6 +33,12 @@ export default defineConfig({
     components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+    }),
+    prism({
+      languages: ['javascript', 'css', 'html', 'typescript', 'dart', 'yaml', 'shell', 'cmake', 'c'],
+      plugins: ['copy-to-clipboard'],
+      theme: 'tomorrow',
+      css: true,
     }),
     markdown({
       wrapperComponent: id => {

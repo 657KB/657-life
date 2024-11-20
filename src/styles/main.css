@@ -11,7 +11,8 @@
     --md-a-border-bottom: #eee;
   }
 
-  .icon {
+  /* invert icon color in darkmode */
+  .icon, .copy-to-clipboard-button {
     filter: invert(1);
   }
 }
@@ -23,4 +24,39 @@ html {
   color: var(--text-primary);
 	background: var(--bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 
+  Prism copy to clipboard button style
+*/
+div.code-toolbar > .toolbar {
+  top: 1.5em !important;
+  right: .5em !important;
+  transform: translateY(-1em);
+}
+
+.copy-to-clipboard-button {
+  font-size: 1em !important;
+  width: 1rem;
+  height: 1rem;
+  padding: .5rem !important;
+  box-sizing: content-box;
+  background-color: rgba(255, 255, 255, .5) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V6h2v14h11v2zm4-6V4z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
+  background-size: 1em;
+  box-shadow: none !important;
+}
+
+.copy-to-clipboard-button:hover {
+  background-color: rgba(255, 255, 255, .8) !important;
+}
+
+.copy-to-clipboard-button > span {
+  display: none;
+}
+
+.copy-to-clipboard-button[data-copy-state='copy-success'] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='m6.7 18l-5.65-5.65l1.425-1.4l4.25 4.25l1.4 1.4zm5.65 0L6.7 12.35l1.4-1.425l4.25 4.25l9.2-9.2l1.4 1.425zm0-5.65l-1.425-1.4L15.875 6L17.3 7.4z'/%3E%3C/svg%3E") !important;
 }

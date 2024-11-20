@@ -10,7 +10,9 @@
     "new": "node ./scripts/new.js"
   },
   "dependencies": {
+    "@types/prismjs": "^1.26.5",
     "dayjs": "^1.11.13",
+    "prismjs": "^1.29.0",
     "vue": "^3.5.12",
     "vue-router": "4"
   },
@@ -30,6 +32,7 @@
     "unplugin-vue-markdown": "^0.26.2",
     "unplugin-vue-router": "^0.10.8",
     "vite": "^5.4.10",
+    "vite-plugin-prismjs": "^0.0.11",
     "vite-ssg": "^0.24.1",
     "vue-tsc": "^2.1.8"
   }
