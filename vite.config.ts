@@ -1,5 +1,5 @@
 import { resolve } from 'node:path'
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync, lstatSync } from 'node:fs'
 import { defineConfig } from 'vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import vue from '@vitejs/plugin-vue'
@@ -10,6 +10,17 @@ import markdownAnchor from 'markdown-it-anchor'
 import markdownPrism from 'markdown-it-prism'
 import matter from 'gray-matter'
 import prism from 'vite-plugin-prismjs'
+import sitemap from 'vite-plugin-sitemap'
+
+const posts = () => {
+  const POSTS_DIR = resolve(__dirname, 'pages/posts')
+  if (lstatSync(POSTS_DIR).isDirectory()) {
+    return readdirSync(POSTS_DIR)
+      .filter(file => file !== 'index.md')
+      .map(file => `/posts/${file.replace('.md', '')}`)
+  }
+  return []
+}
 
 export default defineConfig({
   resolve: {
@@ -64,6 +75,15 @@ export default defineConfig({
         md.use(markdownAnchor)
         md.use(markdownPrism)
       }
+    }),
+    sitemap({
+      hostname: 'https://657.life',
+      dynamicRoutes: [
+        '/photos',
+        '/portfolio',
+        '/posts',
+        ...posts(),
+      ],
     }),
   ],
 })
