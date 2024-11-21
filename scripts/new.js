@@ -6,7 +6,7 @@ const __dirname = import.meta.dirname;
 try {
   writeFileSync(resolve(__dirname, '../pages/posts', `.drafts-${Date.now()}.md`), `\
 ---
-title: [NO TITLE]
+title: NO TITLE
 date: ${Date.now()}
 tags: []
 drafts: true

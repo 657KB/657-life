@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
-import 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css'
 
 const { frontmatter } = defineProps({
   frontmatter: {

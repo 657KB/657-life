@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import NavBar from '@/components/NavBar.vue'
+import 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
 </script>
 
 <template>
