@@ -48,10 +48,10 @@ initTags()
 </script>
 
 <template>
-  <div class=" mb-6 space-x-4 ">
+  <div class=" flex flex-wrap mb-6 ">
     <span
       v-for="[tag, selected] in tags.value"
-      :class="` border-dashed border border-[transparent] hover:opacity-60 data-[selected=true]:border-[--text-primary] data-[selected=true]:p-1 inline text-base cursor-pointer select-none rounded `"
+      :class="` py-1 me-4 border-dashed border border-[transparent] hover:opacity-60 data-[selected=true]:border-[--text-primary] data-[selected=true]:p-1 text-base cursor-pointer select-none rounded `"
       :data-selected="selected"
       @click="() => toggleTag(tag)"
     >
@@ -66,7 +66,8 @@ initTags()
       >
         {{ post.title }}
       </RouterLink>
-      <span class=" ms-2 text-base text-[#888] select-none ">
+      <br class="sm:hidden" />
+      <span class=" text-sm sm:ms-2 text-[#888] select-none ">
         {{ dayjs(post.date).format('D MMM YYYY') }}
       </span>
     </li>
