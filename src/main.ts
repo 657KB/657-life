@@ -9,8 +9,10 @@ import '@/styles/main.css'
 import '@/styles/markdown.css'
 import '@/styles/tailwind.css'
 
-export const createApp = ViteSSG(App, { routes }, ({ router }) => {
-  router.beforeEach(() => { Nprogress.start() })
-  router.afterEach(() => { Nprogress.done() })
+export const createApp = ViteSSG(App, { routes }, ({ router, isClient }) => {
+  if (isClient) {
+    router.beforeEach(() => { Nprogress.start() })
+    router.afterEach(() => { Nprogress.done() })
+  }
 })
 
