@@ -51,7 +51,7 @@ initTags()
   <div class=" mb-6 space-x-4 ">
     <span
       v-for="[tag, selected] in tags.value"
-      :class="` border-dashed border hover:border-[--text-primary] data-[selected=true]:border-[--text-primary] p-1 inline text-base cursor-pointer select-none rounded `"
+      :class="` border-dashed border border-[transparent] hover:border-[--text-primary] data-[selected=true]:border-[--text-primary] p-1 inline text-base cursor-pointer select-none rounded `"
       :data-selected="selected"
       @click="() => toggleTag(tag)"
     >
