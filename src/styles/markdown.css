@@ -9,7 +9,7 @@
 }
 
 .markdown-body a {
-  border-bottom: 1px solid var(--md-a-border-bottom);
+  border-bottom: 1px solid var(--text-primary);
 }
 
 .markdown-body a:hover {

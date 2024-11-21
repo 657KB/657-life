@@ -1,14 +1,12 @@
 :root {
   --bg: #fefefe;
   --text-primary: #242424;
-  --md-a-border-bottom: #242424;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #191919;
     --text-primary: #eee;
-    --md-a-border-bottom: #eee;
   }
 
   /* invert icon color in darkmode */

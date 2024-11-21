@@ -1,6 +1,7 @@
 import { resolve } from 'node:path'
 import { readFileSync } from 'node:fs'
 import { defineConfig } from 'vite'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import vue from '@vitejs/plugin-vue'
 import router from 'unplugin-vue-router/vite'
 import components from 'unplugin-vue-components/vite'
@@ -30,6 +31,19 @@ export default defineConfig({
       },
     }),
     vue({ include: [/\.vue$/, /\.md$/] }),
+    ViteImageOptimizer({
+      test: /\.(jpe?g|png|gif|webp)$/i, 
+      png: {
+        quality: 60,
+        compressionLevel: 6,
+      },
+      jpeg: {
+        quality: 60,
+      },
+      webp: {
+        lossless: true,
+      },
+    }),
     components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],

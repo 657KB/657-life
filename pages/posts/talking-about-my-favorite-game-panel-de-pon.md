@@ -1,18 +1,61 @@
 ---
-title: 谈谈我喜爱的游戏——“Panel de Pon”
+title: 谈谈我喜欢的游戏——“Panel de Pon”
 date: 1732183895958
-tags: ['谈谈我喜爱的游戏']
-drafts: true
+tags: ['游戏']
+headImage: '/images/panel-de-pon-head-image.png'
 ---
 
-![panel de pon](/images/panel-de-pon-0.png)
+《Panel de Pon》是由任天堂开发的一款经典的益智消除类游戏，最初于 1995 年在日本的超级任天堂（SNES）平台发布。这款游戏在北美地区被重新命名为 [“Tetris Attack”](https://en.wikipedia.org/wiki/Tetris_Attack)（换个俄罗斯方块的皮可能更好卖？），并且在许多不同的平台上发布过。
 
-《Panel de Pon》是由任天堂开发的一款经典的益智游戏，最初于 1995 年在日本的超级任天堂（SNES）平台发布。这款游戏在北美地区被重新命名为[《Tetris Attack》](https://en.wikipedia.org/wiki/Tetris_Attack)（换个俄罗斯方块的皮可能更好卖？），并且在许多不同的平台上发布过。
+相较于换皮游戏 Tetris Attack，我更中意 Panel de Pon 的美术和音乐，后者的美术和音乐风格更偏向少女、可爱、轻松。
 
-游戏玩法类似于三消类游戏，玩家需要通过交换相邻的方块，至少三个相同颜色的方块连成一条线，使其消除并得分。随着游戏的进行，方块的下落速度逐渐加快，增加了游戏的难度。游戏支持单人模式和多人对战模式，后者是这款游戏的一个重要特色，玩家可以与朋友进行对抗。
+![panel de pon screenshot](/images/panel-de-pon-first-view.png)
 
-“Panel”（パネル）指的是“面板”或“板块”，而“de”（デ）是西班牙语的“的”或“的所有格”形式，通常用于连接两个名词，差不多等于英语中的“of”。Pon 为拟声词，所以整个游戏名的意思大致为 “面板上的砰砰”。
+Panel de Pon 的前身可能是一款名为 [“Yoshi's Cookie”](https://en.wikipedia.org/wiki/Yoshi%27s_Cookie) 的游戏，这款游戏我并没有玩过，从维基百科的介绍和网上的图片来看它们二者的玩法较为相似。
 
-相较于换皮游戏 Tetris Attack,我更中意 Panel de Pon 的美术和音乐，在游玩后者更为愉快、放松，如果你是休闲玩家应该也会更喜欢轻松一点的 Panel de Pon 吧！
+## “Panel de Pon” 的意思
 
-虽说 Panel de Pon 的游玩体验更为放松，但它的难度说实话也不算太低，
+Pnael de Pon 是在日本发行时使用的名称，在欧美地区一般使用 “Puzzle League” 这个名称；而关于 Panel de Pon 这个名称的含义是什么，在网上也有不少人发出疑问，我总结了目前网上的讨论，大致有了下面这个答案：
+
+“Panel” 指的是 “面板”，而 “de” 是西班牙语中的 “的”，通常用于连接两个名词，在英语中就是 “of”。Pon 为拟声词，表示“砰”的声音，所以整个游戏名的意思大致为 “面板上的砰砰”，应该是消除砖块的一种抽象表达。
+
+## 玩法与机制
+
+Panel de Pon 的玩法和 [消灭星星](https://baike.baidu.com/item/%E6%B6%88%E7%81%AD%E6%98%9F%E6%98%9F/9963893) 类似，是通过交换两个方块的位置，拼凑出三个或以上在同一行或同一列的相同颜色方块，以达到消除它们的条件，和消灭星星不同的是，Panel de Pon 只支持交换水平位置的方块，并且方块会一行一行不断从下往上增加，玩家必须在方块到达顶部之前通过消除方块达到目标分数才能赢得胜利。
+
+<video class=" max-w-full mx-auto my-8 " width="468" height="352" controls>
+  <source src="/videos/panel-de-pon-screencast-1.webm" type="video/webm">
+</video>
+
+当方块被消除时，被消除的方块上方的方块会往下掉落，如果掉落的方块正好和两边的方块同色，那么掉落的方块和两边的方块也会消除，这样消除的方块会带来更多的分数。如果想挑战高分，那么提前计算好每一个要消除的方块的顺序是必不可少的。
+
+游戏里有一个特别的机制是，在消除方块的时候方块会暂停上升，右侧会出现暂停的指示，此时玩家可以继续移动方块并消除，可以利用消除方块得来的暂停时间继续不断消除，在即将 Game Over 的时候玩家会不自觉紧紧抓住这个救命稻草可以力挽狂澜。我认为这是一个很好的机制，不仅可以一定程度上降低游戏难度，也可以给玩家带来突破死局的成就感。
+
+<video class=" max-w-full mx-auto my-8 " width="468" height="352" controls>
+  <source src="/videos/panel-de-pon-screencast-2.webm" type="video/webm">
+</video>
+
+Panel de Pon 不仅可以单人游玩，它还支持双人模式，如果没有人陪你玩双人模式，你也可以选择 VS 模式和人机 PK。
+
+双人模式下为了增加乐趣而引入了一个新的机制：当你消除方块时，会根据消除方块的数量，在对手的场上掉落一个长条；长条可能是某一种方块的颜色，也可能是灰色的，有颜色的长条会在相邻的同色方块消除时被一起消除，而灰色的长条在相邻方块消除时会变成一排随机的小砖块。你消除的长条还可能会转移到对手场上，不得不说这是一个比较容易友尽的机制。
+
+![panel-de-pon-long-square.png](/images/panel-de-pon-long-square.png)
+
+Panel de Pon 内置有 99 级速度调节和 3 档难度选择，游戏速度会随时间自动加快直到不能再快（除非你一开始就把速度设置成了最快）。速度设置会影响砖块上升的速度，而难度可能是影响砖块生成的机制。如果你还是觉得不够快，可以手动按下 R 键使方块上升的速度更快。
+
+<div class="flex flex-row">
+  <div class="flex-1">
+    <img alt="panel-de-pon-speed-selection.png" src="/images/panel-de-pon-speed-selection.png">
+  </div>
+  <div class="flex-1">
+    <img alt="panel-de-pon-difficult-selection.png" src="/images/panel-de-pon-difficult-selection.png">
+  </div>
+</div>
+
+## 结尾的话
+
+我第一次游玩 Panel de Pon 是在 Nintendo Switch 上，当你开通 Nitendo Switch Online 服务后就可以通过 Switch 玩一些任天堂的老游戏了，目前可以游玩的游戏平台包括 NES、SNES 和 GameBoy。
+
+我最喜欢的还是它的双人模式，很适合跟朋友一块玩。对我来说 Panel de Pon 就和俄罗斯方块一样，是那种可以时不时掏出来打一会儿的游戏，在我心中它已经被冠以了 “经典” 的荣誉。
+
+你可以通过互联网档案馆下载到该游戏的 ROM：[Panel de Pon (English version)](https://archive.org/details/panel-de-pon-english)，并使用在线的 SNES 模拟器 [SnesJS](https://angelo-wf.github.io/SnesJs/) 体验这个游戏，希望你也能喜欢上 Panel de Pon！
