@@ -13,7 +13,6 @@ declare module 'vue' {
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     PhotoCard: typeof import('./src/components/PhotoCard.vue')['default']
     PhotosLayout: typeof import('./src/components/PhotosLayout.vue')['default']
-    PhotoViewer: typeof import('./src/components/PhotoViewer.vue')['default']
     PostList: typeof import('./src/components/PostList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

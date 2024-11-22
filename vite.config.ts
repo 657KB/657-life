@@ -61,14 +61,14 @@ export default defineConfig({
     ViteImageOptimizer({
       test: /\.(jpe?g|png|gif|webp)$/i, 
       png: {
-        quality: 60,
+        quality: 30,
         compressionLevel: 6,
       },
       jpeg: {
-        quality: 60,
+        quality: 30,
       },
       jpg: {
-        quality: 60,
+        quality: 30,
       },
       webp: {
         lossless: true,
