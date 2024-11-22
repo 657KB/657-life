@@ -22,6 +22,7 @@ const posts = computed(() => routes.map(route => {
     title: (route.meta.frontmatter.title || 'UNTITLED') as string,
     date: route.meta.frontmatter.date || 0,
     tags: (route.meta.frontmatter.tags || []) as string[],
+    readingTime: (route.meta.frontmatter.readingTime?.text || '') as string,
   }
 }).sort(({ date: d0 }, { date: d1 }) => d1 - d0))
 
@@ -59,17 +60,19 @@ initTags()
     </span>
   </div>
   <ul class=" space-y-4 " :style="{ paddingLeft: 'unset' }">
-    <li v-for="post in posts" :style="{ display: noSelectedTags || isVisible(post.tags) ? 'block' : 'none' }">
-      <RouterLink
-        :style="{ color: 'inherit' }"
-        :to="post.path"
-      >
+    <li
+      v-for="post in posts"
+      :style="{ display: noSelectedTags || isVisible(post.tags) ? 'block' : 'none' }"
+    >
+      <RouterLink :style="{ color: 'inherit' }" :to="post.path">
         {{ post.title }}
       </RouterLink>
       <br class="sm:hidden" />
-      <span class=" text-sm sm:ms-2 text-[#888] select-none ">
-        {{ dayjs(post.date).format('D MMM YYYY') }}
-      </span>
+      <div class=" inline text-sm text-[#888] font-mono select-none w-fit sm:ms-4 ">
+        <span>{{ post.readingTime }}</span>
+        <span class> / </span>
+        <span>{{ dayjs(post.date).format('DD MMM YYYY') }}</span>
+      </div>
     </li>
   </ul>
 </template>

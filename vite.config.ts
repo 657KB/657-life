@@ -1,18 +1,19 @@
-import { resolve } from 'node:path'
+import { basename, resolve } from 'node:path'
 import { readFileSync, readdirSync, lstatSync } from 'node:fs'
 import { defineConfig } from 'vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+import { readingTime } from 'reading-time-estimator'
 import vue from '@vitejs/plugin-vue'
 import router from 'unplugin-vue-router/vite'
 import components from 'unplugin-vue-components/vite'
 import markdown from 'unplugin-vue-markdown/vite'
 import markdownAnchor from 'markdown-it-anchor'
 import markdownPrism from 'markdown-it-prism'
-import matter from 'gray-matter'
 import prism from 'vite-plugin-prismjs'
 import sitemap from 'vite-plugin-sitemap'
+import matter from 'gray-matter'
 
-const posts = () => {
+const postRoutes = () => {
   const POSTS_DIR = resolve(__dirname, 'pages/posts')
   if (lstatSync(POSTS_DIR).isDirectory()) {
     return readdirSync(POSTS_DIR)
@@ -32,11 +33,12 @@ export default defineConfig({
     router({
       extensions: ['.vue', '.md'],
       routesFolder: 'pages',
-      logs: true,
       extendRoute(route) {
         const path = route.components.get('default')
         if (path && path.endsWith('.md')) {
-          const { data } = matter(readFileSync(path, 'utf-8'))
+          const file = readFileSync(path, 'utf-8')
+          const { data } = matter(file)
+          data.readingTime = readingTime(file.toString())
           route.addToMeta({ frontmatter: data })
         }
       },
@@ -71,6 +73,17 @@ export default defineConfig({
           ? 'WrapperPost'
           : 'WrapperDefault'
       },
+      frontmatterPreprocess: (frontmatter, options, id, defaults) => {
+        (() => {
+          if (!id.endsWith('.md')) return
+          if (basename(id, '.md') === 'index') return
+          frontmatter.readingTime = readingTime(readFileSync(id).toString())
+        })()
+        return {
+          head: defaults(frontmatter, options),
+          frontmatter,
+        }
+      },
       async markdownItSetup(md) {
         md.use(markdownAnchor)
         md.use(markdownPrism)
@@ -82,7 +95,7 @@ export default defineConfig({
         '/photos',
         '/portfolio',
         '/posts',
-        ...posts(),
+        ...postRoutes(),
       ],
     }),
   ],
