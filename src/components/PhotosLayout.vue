@@ -40,7 +40,7 @@ onUnmounted(() => {
     :max-columns="3"
     :gap="16"
   >
-    <template #default="{ item, index }">
+    <template #default="{ item }">
       <PhotoCard
         class="grid-item"
         :src="`/photos/${item}`"
