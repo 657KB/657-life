@@ -11,6 +11,9 @@ importers:
       '@types/prismjs':
         specifier: ^1.26.5
         version: 1.26.5
+      '@yeger/vue-masonry-wall':
+        specifier: ^5.0.16
+        version: 5.0.16(vue@3.5.12(typescript@5.6.3))
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
@@ -20,9 +23,6 @@ importers:
       prismjs:
         specifier: ^1.29.0
         version: 1.29.0
-      reading-time-estimator:
-        specifier: ^1.11.0
-        version: 1.11.0
       vue:
         specifier: ^3.5.12
         version: 3.5.12(typescript@5.6.3)
@@ -30,6 +30,9 @@ importers:
         specifier: '4'
         version: 4.4.5(vue@3.5.12(typescript@5.6.3))
     devDependencies:
+      '@types/lodash.debounce':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@types/node':
         specifier: ^22.9.0
         version: 22.9.0
@@ -60,6 +63,9 @@ importers:
       postcss:
         specifier: ^8.4.49
         version: 8.4.49
+      reading-time-estimator:
+        specifier: ^1.11.0
+        version: 1.11.0
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -574,6 +580,12 @@ packages:
   '@types/linkify-it@5.0.0':
     resolution: {integrity: sha512-sVDA58zAw4eWAffKOaQH5/5j3XeayukzDk+ewSsnv3p4yJEZHCCzMDiZM8e0OUrRvmpGZ85jf4yDHkHsgBNr9Q==}
 
+  '@types/lodash.debounce@4.0.9':
+    resolution: {integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==}
+
+  '@types/lodash@4.17.13':
+    resolution: {integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==}
+
   '@types/markdown-it@14.1.2':
     resolution: {integrity: sha512-promo4eFwuiW+TfGxhi+0x3czqTYJkG8qB17ZUJiVF10Xm7NLVRSLUsfRTU/6h1e24VvRnXCx+hG7li58lkzog==}
 
@@ -670,6 +682,20 @@ packages:
 
   '@vue/shared@3.5.12':
     resolution: {integrity: sha512-L2RPSAwUFbgZH20etwrXyVyCBu9OxRSi8T/38QsvnkJyvq2LufW2lDCOzm7t/U9C1mkhJGWYfCuFBCmIuNivrg==}
+
+  '@yeger/debounce@2.0.10':
+    resolution: {integrity: sha512-61K6anfnaJ6ziIXiFOKCqtWCmxy6SeVGxKsG2ae+98SihFo1lT8p/Ny351+sXM5rfa5136u09277JxTXymgalw==}
+
+  '@yeger/vue-lib-adapter@2.0.10':
+    resolution: {integrity: sha512-rHmTZxdrpuh+BheAjQcCZrY4ERpMGpLZHYY99nsqd5RoG1nXXzRkhhNlT3tfWlikW0Wr8UpoxA+/dOlYrCDrtQ==}
+
+  '@yeger/vue-masonry-wall-core@5.0.13':
+    resolution: {integrity: sha512-Sh4kj9uijz/SPy6M0ryVcakIIB31rw6FRlDGZYCADT6ublAYB+39MCcTITIUPAsFtEqk4Nl0IMCS6Gs29LDYVA==}
+
+  '@yeger/vue-masonry-wall@5.0.16':
+    resolution: {integrity: sha512-UbgQhUSwtsALa4ovW/zYCaQjgxIsKQsGNQffE2Lx/hzbNjPoP6wluBbWbQWszPSEEw1wh3JfcVx5uvoH5dK6Rg==}
+    peerDependencies:
+      vue: ^3.0.0
 
   acorn@8.14.0:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
@@ -2105,6 +2131,12 @@ snapshots:
 
   '@types/linkify-it@5.0.0': {}
 
+  '@types/lodash.debounce@4.0.9':
+    dependencies:
+      '@types/lodash': 4.17.13
+
+  '@types/lodash@4.17.13': {}
+
   '@types/markdown-it@14.1.2':
     dependencies:
       '@types/linkify-it': 5.0.0
@@ -2246,6 +2278,20 @@ snapshots:
       vue: 3.5.12(typescript@5.6.3)
 
   '@vue/shared@3.5.12': {}
+
+  '@yeger/debounce@2.0.10': {}
+
+  '@yeger/vue-lib-adapter@2.0.10': {}
+
+  '@yeger/vue-masonry-wall-core@5.0.13':
+    dependencies:
+      '@yeger/debounce': 2.0.10
+      '@yeger/vue-lib-adapter': 2.0.10
+
+  '@yeger/vue-masonry-wall@5.0.16(vue@3.5.12(typescript@5.6.3))':
+    dependencies:
+      '@yeger/vue-masonry-wall-core': 5.0.13
+      vue: 3.5.12(typescript@5.6.3)
 
   acorn@8.14.0: {}
 

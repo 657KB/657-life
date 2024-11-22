@@ -24,6 +24,7 @@ const postRoutes = () => {
 }
 
 export default defineConfig({
+  assetsInclude: ['**/*.JPG'],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -35,15 +36,28 @@ export default defineConfig({
       routesFolder: 'pages',
       extendRoute(route) {
         const path = route.components.get('default')
-        if (path && path.endsWith('.md')) {
+        if (
+          path
+          && path.includes('/posts')
+          && path.endsWith('.md')
+          && !path.endsWith('/index.md')
+        ) {
           const file = readFileSync(path, 'utf-8')
           const { data } = matter(file)
           data.readingTime = readingTime(file.toString())
           route.addToMeta({ frontmatter: data })
         }
+        if (path && path.endsWith('/photos.md')) {
+          if (!route.meta.photos) {
+            const data = readdirSync(resolve(__dirname, 'public/photos'))
+            route.addToMeta({ photos: data })
+          }
+        }
       },
     }),
-    vue({ include: [/\.vue$/, /\.md$/] }),
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
     ViteImageOptimizer({
       test: /\.(jpe?g|png|gif|webp)$/i, 
       png: {
@@ -51,6 +65,9 @@ export default defineConfig({
         compressionLevel: 6,
       },
       jpeg: {
+        quality: 60,
+      },
+      jpg: {
         quality: 60,
       },
       webp: {
@@ -71,11 +88,13 @@ export default defineConfig({
       wrapperComponent: id => {
         return id.includes('/posts/') && !id.includes('/posts/index')
           ? 'WrapperPost'
-          : 'WrapperDefault'
+          : id.includes('/photos')
+            ? 'WrapperPhotos'
+            : 'WrapperDefault'
       },
       frontmatterPreprocess: (frontmatter, options, id, defaults) => {
         (() => {
-          if (!id.endsWith('.md')) return
+          if (!id.includes('/posts') && !id.endsWith('.md')) return
           if (basename(id, '.md') === 'index') return
           frontmatter.readingTime = readingTime(readFileSync(id).toString())
         })()
