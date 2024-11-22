@@ -69,9 +69,9 @@ initTags()
       </RouterLink>
       <br class="sm:hidden" />
       <div class=" inline text-sm text-[#888] font-mono select-none w-fit sm:ms-4 ">
-        <span>{{ post.readingTime }}</span>
-        <span class> / </span>
         <span>{{ dayjs(post.date).format('DD MMM YYYY') }}</span>
+        <span class> / </span>
+        <span>{{ post.readingTime }}</span>
       </div>
     </li>
   </ul>

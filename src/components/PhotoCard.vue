@@ -4,7 +4,7 @@ const emits = defineEmits<{ load: [] }>()
 </script>
 
 <template>
-  <div class=" shadow-xl border overflow-hidden p-4 pb-16 bg-[--bg] ">
+  <div class=" shadow-xl border overflow-hidden p-4 pb-16 bg-[#efefef] ">
     <img class=" object-cover w-full h-full " :src="props.src" @load="() => emits('load')" />
   </div>
 </template>
