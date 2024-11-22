@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build-local": "env-cmd -f ./.env npm run build",
     "build": "vue-tsc -b && vite-ssg build",
     "preview": "vite preview",
     "new": "node ./scripts/new.js"
@@ -24,11 +25,13 @@
     "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.1.4",
     "autoprefixer": "^10.4.20",
+    "env-cmd": "^10.1.0",
     "github-markdown-css": "^5.7.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-prism": "^2.3.0",
+    "node-fetch": "^3.3.2",
     "postcss": "^8.4.49",
     "reading-time-estimator": "^1.11.0",
     "sharp": "^0.33.5",

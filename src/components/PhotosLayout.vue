@@ -40,16 +40,11 @@ onUnmounted(() => {
     :max-columns="3"
     :gap="16"
   >
-    <template #default="{ item }">
+    <template #default="{ item: url }">
       <PhotoCard
-        class="grid-item"
-        :src="`/photos/${item}`"
-        :style="{
-          width: `${state.itemWidth}px`,
-          height: 'fit-content',
-        }"
+        :src="`${url}`"
+        :style="{ width: `${state.itemWidth}px` }"
       />
-      
     </template>
   </masonry-wall>
 </template>
