@@ -33,7 +33,7 @@ onUnmounted(() => {
 
 <template>
   <masonry-wall
-    class=" masonry mt-8 "
+    class=" masonry mt-16 "
     :items="photos"
     :column-width="state.itemWidth"
     :min-columns="1"
