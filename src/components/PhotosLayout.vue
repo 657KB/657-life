@@ -4,20 +4,19 @@ import { useRouter } from 'vue-router/auto'
 import PhotoCard from './PhotoCard.vue'
 
 const router = useRouter()
-const state = reactive({ itemWidth: 0, maxCol: 3 })
+const state = reactive({ itemWidth: 0 })
 const photos = computed(() => router.currentRoute.value.meta.photos as string[])
 
 function resize() {
   const gridWidth = document.querySelector('.masonry')?.getBoundingClientRect().width || 0
   if (screen.availWidth < 400) {
     state.itemWidth = gridWidth
-    state.maxCol = 1
   } else if (screen.availWidth < 800) {
-    state.itemWidth = (gridWidth - 16) / 2
-    state.maxCol = 2
+    state.itemWidth = (gridWidth - 16 - 10) / 2
+  } else if (screen.availWidth < 1600) {
+    state.itemWidth = (gridWidth - 16 * 2 - 10) / 3
   } else {
-    state.itemWidth = (gridWidth - 16 * 2) / 3
-    state.maxCol = 3
+    state.itemWidth = (gridWidth - 16 * 3 - 10) / 4
   }
 }
 
@@ -37,7 +36,7 @@ onUnmounted(() => {
     :items="photos"
     :column-width="state.itemWidth"
     :min-columns="1"
-    :max-columns="3"
+    :max-columns="5"
     :gap="16"
   >
     <template #default="{ item: url }">
