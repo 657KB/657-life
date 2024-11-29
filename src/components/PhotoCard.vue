@@ -5,6 +5,11 @@ const emits = defineEmits<{ load: [] }>()
 
 <template>
   <div class=" shadow-xl border overflow-hidden p-4 pb-16 bg-[#efefef] ">
-    <img class=" object-cover w-full h-full " :src="props.src" @load="() => emits('load')" />
+    <img
+      class=" object-cover w-full h-full "
+      loading="lazy"
+      :src="props.src"
+      @load="() => emits('load')"
+    />
   </div>
 </template>

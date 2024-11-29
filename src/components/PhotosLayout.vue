@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, reactive } from 'vue'
-import { useRouter } from 'vue-router/auto'
+import { useRoute } from 'vue-router/auto'
 import PhotoCard from './PhotoCard.vue'
 
-const router = useRouter()
+const route = useRoute()
 const state = reactive({ itemWidth: 0, maxCol: 3 })
-const photos = computed(() => router.currentRoute.value.meta.photos as string[])
+const photos = computed(() => route.meta.frontmatter.photos as string[])
 
 function resize() {
   const gridWidth = document.querySelector('.masonry')?.getBoundingClientRect().width || 0

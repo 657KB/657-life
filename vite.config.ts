@@ -23,11 +23,6 @@ const postRoutes = () => {
   return []
 }
 
-const images = () : string[] => {
-  const IMAGES_JSON = resolve(__dirname, 'images.json')
-  return JSON.parse(readFileSync(IMAGES_JSON).toString())
-}
-
 export default defineConfig({
   assetsInclude: ['**/*.JPG'],
   resolve: {
@@ -53,9 +48,9 @@ export default defineConfig({
           route.addToMeta({ frontmatter: data })
         }
         if (path && path.endsWith('/photos.md')) {
-          if (!route.meta.photos) {
-            route.addToMeta({ photos: images() })
-          }
+          const file = readFileSync(path, 'utf-8')
+          const { data } = matter(file)
+          route.addToMeta({ frontmatter: data })
         }
       },
     }),
